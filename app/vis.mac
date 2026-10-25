@@ -37,7 +37,7 @@
 
 # shoot where the camera looks; monsters take damage. Try: /doom/fire, /doom/status
 # (kept last: the /gui/ commands only exist in the Qt session)
-/gui/addMenu doom Doom
+/gui/addMenu doom Geant4Doom
 /gui/addButton doom Fire /doom/fire
 /gui/addButton doom "Fire x10" "/doom/fire 10"
 /gui/addButton doom Status /doom/status

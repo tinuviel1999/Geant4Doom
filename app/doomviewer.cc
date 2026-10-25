@@ -121,7 +121,10 @@
 #include "doomworld.hh"
 
 #ifdef DOOM_QT
+#include "G4UIQt.hh"
+
 #include <QApplication>
+#include <QMainWindow>
 #include <QCursor>
 #include <QElapsedTimer>
 #include <QKeyEvent>
@@ -4587,6 +4590,7 @@ int main(int argc, char** argv)
     DoomInput* input = nullptr;
     DoomHud* hud = nullptr;
     if (session->IsGUI() && qApp) {
+      if (auto* qt = dynamic_cast<G4UIQt*>(session->GetSession())) qt->GetMainWindow()->setWindowTitle("Geant4Doom");
       qApp->installEventFilter(input = new DoomInput(doom, qApp));
       doom->SetChargeDeferred(true);  // DoomInput lets the BFG's charged shot go
       hud = new DoomHud(doom, std::filesystem::path(argv[1]).parent_path() / "hud", qApp);
