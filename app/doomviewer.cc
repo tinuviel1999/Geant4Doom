@@ -4480,6 +4480,16 @@ class DoomHud : public QObject
       fOverlay->render(&image);
       image.save(QString("%1_%2.png").arg(snapshot).arg(fTics / 35, 2, 10, QChar(u'0')));
     }
+    // DOOM_WINDOW_SNAPSHOT=prefix saves the whole Geant4 window once a second, plus where the 3D
+    // view is in it (x y w h in a .txt), to paste the view and HUD snapshots into
+    static const char* window = std::getenv("DOOM_WINDOW_SNAPSHOT");
+    if (window && fTics % 35 == 0) {
+      const QString name = QString("%1_%2").arg(window).arg(fTics / 35, 2, 10, QChar(u'0'));
+      fOverlay->window()->grab().save(name + ".png");
+      const QPoint at = fOverlay->mapTo(fOverlay->window(), QPoint(0, 0));
+      std::ofstream(name.toStdString() + ".txt")
+          << at.x() << ' ' << at.y() << ' ' << fOverlay->width() << ' ' << fOverlay->height() << '\n';
+    }
   }
 
  private:

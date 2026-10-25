@@ -215,7 +215,10 @@ See README.md for usage. This file records what was learned building it.
   mouse-transparent child QWidget of the visible QOpenGLWidget (re-found every tick, 35 Hz), so it
   never triggers a Geant4 redraw.
   `DOOM_HUD_SNAPSHOT=prefix` saves the HUD layer alone once a second: use it (with
-  QT_QPA_PLATFORM=offscreen) to check the HUD.
+  QT_QPA_PLATFORM=offscreen) to check the HUD. `DOOM_WINDOW_SNAPSHOT=prefix` grabs the whole Geant4
+  window (help tree, output, session line; the GL area comes out blank) plus `prefix_NN.txt` with the
+  view's x y w h in it: paste view + HUD there for README screenshots (a big offscreen screen:
+  `QT_QPA_PLATFORM=offscreen:configfile=screen.json`).
   **Deadlock gotcha:** a Qt viewer refresh (`/vis/viewer/refresh` from SetCamera) processes Qt
   events, so Qt timers (HUD, input) can run re-entrantly *inside* any /doom/ command. The first HUD
   locked the Bestiary mutex while Think held it inside ForEach (death -> camera drop -> refresh),
