@@ -20,6 +20,7 @@ Geant4 11.4.3 on Linux (Qt6, Wayland).
 
 - [Requirements](#requirements)
 - [Quick start](#quick-start)
+- [FAQ](#faq)
 - [Controls](#controls)
 - [Console commands](#console-commands)
 - [What is in the game](#what-is-in-the-game)
@@ -30,6 +31,20 @@ Geant4 11.4.3 on Linux (Qt6, Wayland).
 - [Ideas for next steps](#ideas-for-next-steps)
 - [License](#license)
 - [Credits and legal](#credits-and-legal)
+
+## FAQ
+
+# What is this?
+Exactly what you think, Doom ported to Geant4.
+
+# Why?
+Because.
+
+# How much effort did it take to make?
+One weekend vibe coding with Claude 5.5.
+
+# Do you even know what is going in the code?
+No.
 
 ## Requirements
 
