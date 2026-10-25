@@ -34,16 +34,16 @@ Geant4 11.4.3 on Linux (Qt6, Wayland).
 
 ## FAQ
 
-# What is this?
+### What is this?
 Exactly what you think, Doom ported to Geant4.
 
-# Why?
+### Why?
 Because.
 
-# How much effort did it take to make?
+### How much effort did it take to make?
 One weekend vibe coding with Claude 5.5.
 
-# Do you even know what is going in the code?
+### Do you even know what is going in the code?
 No.
 
 ## Requirements
