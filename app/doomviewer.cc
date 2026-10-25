@@ -4337,7 +4337,11 @@ class TexturePass : public QObject
     fSnapshotSecond = Tic() / 35;
     QImage image(w, h, QImage::Format_RGBA8888);
     glReadPixels(0, 0, w, h, GL_RGBA, GL_UNSIGNED_BYTE, image.bits());
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+    image.flipped(Qt::Vertical).save(QString("%1_%2.png").arg(snapshot).arg(fSnapshots++, 3, 10, QChar(u'0')));
+#else
     image.mirrored().save(QString("%1_%2.png").arg(snapshot).arg(fSnapshots++, 3, 10, QChar(u'0')));
+#endif
   }
 
   const DoomMessenger* fDoom;
