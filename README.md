@@ -117,7 +117,7 @@ During the intermission, fire or use hurries it on.
 ## Console commands
 
 Type these in Geant4's command line (Esc frees the mouse to get there), or put them in a macro.
-The Qt window's "Doom" menu has buttons for a few of them.
+The Qt window's "Geant4Doom" menu has buttons for a few of them.
 
 **Game**
 
