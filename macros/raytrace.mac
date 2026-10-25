@@ -1,0 +1,7 @@
+# Same view with the RayTracer: every pixel is a geantino tracked by the Geant4 navigator
+/vis/open RayTracer 960x720-0+0
+/vis/drawVolume
+/vis/viewer/set/background 0.45 0.6 0.85
+/control/execute e1m1_camera_rt.mac
+/vis/viewer/set/lightsVector 0.4 1 0.6
+/vis/viewer/flush

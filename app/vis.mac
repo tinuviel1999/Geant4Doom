@@ -1,0 +1,44 @@
+# Interactive viewing of a doom2gdml level. doomviewer sets the alias {level} to the level's path
+# without the extension (e.g. /home/me/doom1/e1m1), for the camera macro doom2gdml.py wrote.
+# doomviewer reads this file from the working directory, or else from next to the binary.
+/vis/open
+/vis/viewer/set/autoRefresh false
+/vis/drawVolume
+# the monsters' fireballs
+/vis/scene/add/userAction
+/vis/viewer/set/style surface
+/vis/viewer/set/background 0.45 0.6 0.85
+/control/execute {level}_camera.mac
+/vis/viewer/set/lightsVector 0.4 1 0.6
+
+# trajectories of whatever you shoot
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByCharge
+/vis/scene/endOfEventAction accumulate
+/vis/viewer/set/autoRefresh true
+
+# mouse look speed, degrees per mouse count (drag-look and M-captured look)
+/doom/mouseSensitivity 0.15
+
+# sound effects volume, 0..1 (needs sounds/ next to the GDML)
+/doom/volume 0.7
+# music volume, 0..1 (OPL3 FM synth; needs music/ next to the GDML); /doom/music off to stop
+/doom/musicVolume 0.5
+
+# the level with Doom's textures and lighting (OpenGL Qt only); false: Geant4's flat colours
+/doom/textures true
+
+# monsters are drawn as Doom's sprites; /doom/hitboxes true also shows the water volumes the
+# particles hit (wireframes), /doom/sprites false shows only those
+/doom/sprites true
+
+# monsters wake when they see you, hear a shot or get hurt, then chase you
+/doom/monsters true
+
+# shoot where the camera looks; monsters take damage. Try: /doom/fire, /doom/status
+# (kept last: the /gui/ commands only exist in the Qt session)
+/gui/addMenu doom Doom
+/gui/addButton doom Fire /doom/fire
+/gui/addButton doom "Fire x10" "/doom/fire 10"
+/gui/addButton doom Status /doom/status
+/gui/addButton doom Reset /doom/reset

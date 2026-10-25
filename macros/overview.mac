@@ -1,0 +1,12 @@
+# Bird's-eye view of the whole level (run with --hide=_ceil for a roofless view)
+/vis/open TSG_OFFSCREEN 1200x900-0+0
+/vis/tsg/offscreen/set/file e1m1_overview.png
+/vis/drawVolume
+/vis/viewer/set/style surface
+/vis/viewer/set/background 0.06 0.06 0.09
+/vis/viewer/set/upVector 0 1 0
+/vis/viewer/set/viewpointVector -0.55 1.25 0.85
+/vis/viewer/set/projection perspective 20 deg
+/vis/viewer/zoomTo 1.45
+/vis/viewer/set/lightsVector 0.3 1 0.5
+/vis/viewer/flush

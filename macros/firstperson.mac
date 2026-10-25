@@ -1,0 +1,9 @@
+# First-person view from the player start (TSG offscreen; same commands work in OGL/Qt)
+/vis/open TSG_OFFSCREEN 960x720-0+0
+/vis/tsg/offscreen/set/file e1m1_firstperson.png
+/vis/drawVolume
+/vis/viewer/set/style surface
+/vis/viewer/set/background 0.45 0.6 0.85
+/control/execute e1m1_camera.mac
+/vis/viewer/set/lightsVector 0.4 1 0.6
+/vis/viewer/flush
